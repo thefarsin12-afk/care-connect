@@ -1,0 +1,147 @@
+#api calling for listing doctor
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+#api for calling to add doctor
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name":"jason",
+
+    "specialization":"Dermatology",
+
+    "fee":450,
+
+    "qualification":"MBBS,frcs",
+
+    "email":"jason@gmail.com"
+
+
+}
+
+# list to all (using serializer method)
+###
+GET http://127.0.0.1:8000/v2/doctor/
+Accept: application/json
+Authorization: Basic farsin:1234
+
+
+# api calling to create record
+###
+POST http://127.0.0.1:8000/v2/doctor/
+Content-Type: application/json
+Authorization: Basic farsin:1234
+
+{
+    "name":"stevw",
+
+    "specialization":"neurology",
+
+    "fee":250,
+
+    "qualification":"MBBS,frcs,ph",
+
+    "email":"steve@gmail.com"
+
+}
+
+
+#api for calling detail retrieve
+###
+GET http://127.0.0.1:8000/v2/doctor/3/
+Accept: application/json
+Authorization: Basic farsin:1234
+
+
+#api for deleteing record
+###
+DELETE http://127.0.0.1:8000/v2/doctor/3/
+Accept: application/json
+Authorization: Basic farsin:1234
+
+
+# api for calling updation
+###
+PUT http://127.0.0.1:8000/v2/doctor/4/
+Content-Type: application/json
+Authorization: Basic farsin:1234
+
+{
+    "id": "3",
+    "name": "jeo",
+    "specialization": "neurology",
+    "fee": 450,
+    "qualification": "MBBS,frcs",
+    "email": "jeo@gmail.com"
+}
+
+#api for add admin to api
+###
+POST http://127.0.0.1:8000/admin-register/
+Content-Type: application/json
+
+{
+    "username":"farsin",
+    "email":"farsin@gmail.com",
+    "password":"1234"
+}
+
+#appoinment api calling ======
+
+#api for listing all
+###
+GET  http://127.0.0.1:8000/appoinment/
+Accept: application/json
+
+###
+POST  http://127.0.0.1:8000/appoinment/
+Content-Type: application/json
+
+{
+    "patient_name":"jeo",
+    "phone":"12345",
+    "doctor":4,
+    "appointment_date":"2026-11-3",
+    "problem":"leg pain"
+
+}
+
+# create for api register booking_v2
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "email":"django@gmail.com",
+    "password":"password@123"
+}
+
+# api for listing all records for appontment v2
+###
+GET http://127.0.0.1:8000/v2/booking/appointment/
+Accept: application/json
+Authorization: Basic django:password@123
+
+#api for creating appointment
+###
+POST http://127.0.0.1:8000/v2/booking/appointment/
+Content-Type: application/json
+Authorization: Basic django:password@123
+
+{
+   "patient_name":"moosa",
+    "phone":"77978453589",
+    "doctor":4,
+    "appointment_date":"2026-12-11",
+    "problem":"elbow pain"
+}
+
+# api for retrieve one record
+###
+GET http://127.0.0.1:8000/v2/booking/appointment/30/
+Accept: application/json
+Authorization: Basic django:password@123
