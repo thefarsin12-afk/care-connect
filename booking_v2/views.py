@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render		
 from django.contrib.auth.models import User
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication,permissions
 from rest_framework.generics import RetrieveAPIView,UpdateAPIView,DestroyAPIView
 
 from booking.models import Appointment
@@ -32,14 +31,10 @@ class SignUpRegisterView(APIView):
             return Response(data=serializer_instatns.data)
         
         else:
-            return Response(data=serializer_instatns.error)
+            return Response(data=serializer_instat.error)
 
 
 class AppointmentListCreateView(APIView):
-
-    authentication_classes =  [authentication.BasicAuthentication]
-
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self,request):
 
@@ -89,14 +84,11 @@ class AppointmentListCreateView(APIView):
 
         else:
             
-            return Response(data=serializer_instant.errors)
+            return Response(data=serializer_instantans.errors)
+
 
 class AppointmentRetriveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIView):
 
-    authentication_classes =  [authentication.BasicAuthentication]
-    
-    permission_classes = [permissions.IsAuthenticated]
-    
     serializer_class = AppointmentSerializer
 
     queryset = Appointment.objects.all()

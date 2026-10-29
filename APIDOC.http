@@ -51,7 +51,7 @@ Authorization: Basic farsin:1234
 
 #api for calling detail retrieve
 ###
-GET http://127.0.0.1:8000/v2/doctor/3/
+GET http://127.0.0.1:8000/v2/doctor/4/
 Accept: application/json
 Authorization: Basic farsin:1234
 
@@ -133,8 +133,8 @@ Content-Type: application/json
 Authorization: Basic django:password@123
 
 {
-   "patient_name":"moosa",
-    "phone":"77978453589",
+   "patient_name":"alvi",
+    "phone":"77978453582",
     "doctor":4,
     "appointment_date":"2026-12-11",
     "problem":"elbow pain"

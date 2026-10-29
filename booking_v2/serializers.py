@@ -16,7 +16,6 @@ class SignUpSerializer(serializers.ModelSerializer):
 
 class AppointmentSerializer(serializers.ModelSerializer):
 
-    doctor = serializers.StringRelatedField()
     
     class Meta:
 

@@ -45,7 +45,7 @@ class AppoinmentListCreateView(APIView):
 
                 new_token = 1
 
-            doctor_object = Doctor.objects.get(id=fdoctor)
+            doctor_object = Doctor.objects.get(id=doctor)
 
             cleened_data["doctor"]=doctor_object
 
